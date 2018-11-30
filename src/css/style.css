@@ -1,0 +1,42 @@
+body {
+    background-color: #C5C6C7;
+    color:#1F2833;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/*
+
+Overwrite jquery.json styles
+
+*/
+.tab-container {
+    margin: 20px;
+    margin-left: 40px;
+}
+
+ul.json-dict li {
+    width: auto;
+    display: block;
+    line-height: 180%;
+}
+.property{
+    color:#4FDEE5;
+    line-height: 160%;
+    font-weight: bold;
+}
+.json-literal-numeric{
+    color: #F5B041;
+}
+.json-literal-string{
+    color: #01ff70;
+}
+
+.json-literal-url{
+    color: #0184ff;
+}
+.json-literal-boolean, .json-literal {
+    color: #AF7AC5;
+}
+

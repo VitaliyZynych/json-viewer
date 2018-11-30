@@ -1,0 +1,27 @@
+.Output {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+.Output h1 {
+    color: #1F2833;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 110%;
+    text-align: center;
+    margin: 80px;;
+}
+
+.Output .jsonOutput{
+    box-sizing: border-box;
+    width: 100%;
+    height: 450px;
+    border: 1px solid #45A29E;
+    padding:20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.8;
+    font-family: monospace;
+    background-color: white
+}
