@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styles from "./Input.module.css"
 
-class Input extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            errors: {
-                jsonParseFailed: {
-                    status: false,
-                    message: 'Failed to parse invalid JSON format'
-                },
-                rawJSON: {
-                    status: false,
-                    message: 'Field shouldn\'t be empty'
-                }
+class Input extends PureComponent {
+
+    state = {
+        errors: {
+            jsonParseFailed: {
+                status: false,
+                message: 'Failed to parse invalid JSON format'
             },
-            json: JSON.stringify(props.json, null, 4)
+            rawJSON: {
+                status: false,
+                message: 'Field shouldn\'t be empty'
+            }
         }
     }
 
@@ -39,12 +36,8 @@ class Input extends Component {
             });
             return;
         }
-
         try {
             const json = JSON.parse(rawJSON);
-            this.setState({
-                json: json
-            })
             this.props.changeJSON(json);
         } catch (e) {
             this.setState({
@@ -87,10 +80,21 @@ class Input extends Component {
         });
     }
 
+
     render() {
         return (
             <div className={styles.Input}>
                 <h1>Please enter JSON text</h1>
+
+                <div className={styles.formInput}>
+                    <textarea 
+                        ref="rawJSON"
+                        value={JSON.stringify(this.props.data)}
+                        onChange={ this.props.updated }
+                        className={styles.jsonInput}
+                    ></textarea>
+                </div>
+
                 {
                     this.state.errors.jsonParseFailed.status &&
                     (<div className={styles.jsonInputErrorMsg}>
@@ -103,14 +107,11 @@ class Input extends Component {
                         {this.state.errors.rawJSON.message}
                     </div>)
                 }
-                <div className={styles.formInput}>
-                    <textarea ref="rawJSON" defaultValue={this.state.json} className={styles.jsonInput}></textarea>
-                </div>
-                
+
                 <div className={`${styles.formInput} ${styles.saveBtnArea}`}>
                     <button
                         className={ styles.btn }
-                        onClick={this.parseJSON.bind(this)}
+                        onClick={ this.parseJSON.bind(this) }
                     >Parse JSON
                     </button>
                 </div>
