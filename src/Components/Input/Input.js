@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styles from "./Input.module.css"
+import styles from "./Input.module.css";
 
 class Input extends PureComponent {
     state = {
