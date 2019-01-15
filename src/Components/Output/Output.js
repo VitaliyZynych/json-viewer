@@ -16,6 +16,6 @@ const Output = (props) => (
                     />
                 </div>
             </div>
-        );
+);
 
 export default Output;

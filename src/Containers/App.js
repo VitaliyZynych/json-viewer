@@ -3,22 +3,21 @@ import Output from '../Components/Output/Output';
 import Input from '../Components/Input/Input';
 import styles from './App.module.css'
 
-class App extends PureComponent {
+export class App extends PureComponent {
     
     state = {
         json: {
             "string": "this is a test ...",
             "integer": 42,
-            "array":[ 1, 2, 3, "test", NaN ],
-            "float":3.14159,
-            "undefined":undefined,
+            "array": [1,2,3,"test",null],
+            "float": 3.14159,
             "object": {
                 "first-child": true,
                 "second-child": false,
                 "last-child": null
             },
             "string_number": "1234",
-            "date": new Date(Date.now())
+            "date": "2019-01-14T12:57:40.972Z"
         }
     };
 
