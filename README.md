@@ -1,4 +1,5 @@
-JSON Viewer
+# JSON Viewer
+## App developed using React
 
 ## Available Scripts
 
